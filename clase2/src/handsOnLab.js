@@ -4,6 +4,32 @@ class TicketManager {
   constructor(empresa) {
     this.empresa = empresa;
     this.evento = [];
+    this.usuarios = [
+      {
+        id: 456,
+        nombre: "Juan Carlos",
+        apellido: "Castro",
+        edad: "30",
+      },
+      {
+        id: 789,
+        nombre: "Lionel",
+        apellido: "Messi",
+        edad: "35",
+      },
+      {
+        id: 532,
+        nombre: "Diego Armando",
+        apellido: "Maradona",
+        edad: "50",
+      },
+      {
+        id: 229,
+        nombre: "Antonio",
+        apellido: "Farias",
+        edad: "38",
+      },
+    ];
     this.#id = 0;
   }
   #idGen = () => {
@@ -25,9 +51,31 @@ class TicketManager {
       participantes: participantes,
     };
     this.evento.push(nuevoEvento);
+    console.log(this.evento);
     return nuevoEvento;
   };
-  agregarUsuario = (idEvento, idUsuario) => {};
+  agregarUsuario = (idEvento, idUsuario) => {
+    this.evento.forEach((evento) => {
+      if (evento.id === idEvento) {
+        console.log("el evento existe");
+        let newUser = this.#agregarParticipante(idUsuario);
+        console.log(`este es ${newUser}`);
+      }
+    });
+  };
+
+  #agregarParticipante = (idUsuario) => {
+    this.usuarios.forEach((usuario) => {
+      if (usuario.id === idUsuario) {
+        console.log(usuario);
+        return usuario;
+      } else {
+        console.log("Usuario no registrado");
+        return "usuario no registrado";
+      }
+    });
+  };
+
   ponerEventoEnGira = (idEvento, nuevaLocalidad, nuevaFecha) => {};
 }
 
@@ -35,3 +83,4 @@ const ticketera = new TicketManager();
 
 ticketera.agregarEvento("tini", "estadio de la plata", 50, "09/09/2023", 150);
 ticketera.agregarEvento("tini", "estadio de la plata", 50, "09/09/2023", 150);
+ticketera.agregarUsuario(1, 456);
