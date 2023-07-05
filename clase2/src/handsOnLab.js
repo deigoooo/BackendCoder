@@ -55,23 +55,13 @@ class TicketManager {
     return nuevoEvento;
   };
   agregarUsuario = (idEvento, idUsuario) => {
-    this.evento.forEach((evento) => {
-      if (evento.id === idEvento) {
-        console.log("el evento existe");
-        let newUser = this.#agregarParticipante(idUsuario);
-        console.log(`este es ${newUser}`);
-      }
-    });
-  };
-
-  #agregarParticipante = (idUsuario) => {
-    this.usuarios.forEach((usuario) => {
-      if (usuario.id === idUsuario) {
-        console.log(usuario);
-        return usuario;
-      } else {
-        console.log("Usuario no registrado");
-        return "usuario no registrado";
+    this.evento.forEach((element) => {
+      if (element.id === idEvento) {
+        const o = this.usuarios.find((usuario) => {
+          return usuario.id === idUsuario;
+        });
+        element.participantes.push(o);
+        console.log(this.evento[0].participantes);
       }
     });
   };
