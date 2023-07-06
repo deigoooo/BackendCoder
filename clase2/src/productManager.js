@@ -42,29 +42,23 @@ class ProductManager {
         }
       });
     };
-    validacion(product).then((newProduct) => {
-      const valido = this.products.reduce((acc, prod) => {
-        if (prod.code === newProduct.code) {
-          console.log(`El producto no puede tener el mismo Codigo`);
-          throw new Error("El producto no puede tener el mismo Codigo");
-        } else {
-          console.log(prod);
-          acc.push(prod);
-          return acc;
-        }
-      }, 0);
-      console.log(valido);
-    });
-    /*     return new Promise((resolve, reject) => {
-      if (
-        Object.keys(product).every((element) => formato.hasOwnProperty(element))
-      ) {
-        product.id = this.#idGen();
-        resolve(this.products.push(product));
-      } else {
-        reject("Inserte un producto valido.");
-      }
-    }); */
+    validacion(product)
+      .then((newProduct) => {
+        const c = [];
+        this.products.map((prod) => {
+          console.log("entro al map");
+          if (prod.code === newProduct.code) {
+            throw new Error("el code no puede repetirse");
+          }
+          c.push(newProduct);
+          if (c.length <= 1) {
+            this.products.push(newProduct);
+          }
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
   getProduct() {
     console.log(this.products);
@@ -79,7 +73,7 @@ manejadorProductos.addProduct({
   precio: 150000,
   thumbnail:
     "https://www.maneldecoracion.com/tienda/980-large_default/cama-so-pop-noctis.jpg",
-  code: 4568,
+  code: 12,
   stock: 15,
 });
-//manejadorProductos.getProduct();
+manejadorProductos.getProduct();
