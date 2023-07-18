@@ -1,4 +1,5 @@
-const palabraMasLarga = (argumento) => {
+/* 
+  const palabraMasLarga = (argumento) => {
   const nuevoArgumento = argumento.split(" ");
   //console.log(nuevoArgumento);
   let i = 0;
@@ -12,4 +13,12 @@ const palabraMasLarga = (argumento) => {
   console.log(i);
 };
 
-palabraMasLarga("la coca es ricasa ortopedia");
+palabraMasLarga("la coca es ricasa ortopedia"); 
+*/
+
+/* 
+console.log(isReverseInt(234, -432))  //false
+console.log(isReverseInt(234, 432))  //true
+console.log(isReverseInt(-234, -432))  //true
+console.log(isReverseInt(-234, -732))  //false 
+*/
