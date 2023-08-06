@@ -1,0 +1,20 @@
+[
+	{
+		"name": "Alex",
+		"last_name": "Marin",
+		"age": 46,
+		"id": 1
+	},
+	{
+		"name": "Shakira",
+		"last_name": "",
+		"age": 44,
+		"id": 2
+	},
+	{
+		"name": "Pique",
+		"last_name": "",
+		"age": 34,
+		"id": 3
+	}
+]
