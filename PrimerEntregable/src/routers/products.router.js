@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
     for (let i = 0; i < limit && i < products.length; i++) {
       newProducts.push(products[i]);
     }
-    res.send(newProducts);
+    res.status(200).json({ status: "succes", payload: newProducts });
   }
 });
 router.get("/:id", async (req, res) => {
