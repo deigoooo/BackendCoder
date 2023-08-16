@@ -25,6 +25,7 @@ class ProductManager {
     return productId;
   }
   async addProduct(product) {
+    product.status = true;
     if (
       !product.title ||
       !product.description ||
@@ -44,7 +45,8 @@ class ProductManager {
       console.log(`[ERROR] El codigo ${code.code} ya existe`);
       return "[ERROR] El Codigo ya existe";
     }
-    product.status = true;
+
+    console.log(product);
     const newProduct = { id: this.#getNextID(products), ...product };
     products.push(newProduct);
     await fs.promises.writeFile(
