@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
     for (let i = 0; i < limit && i < carts.length; i++) {
       newCarts.push(carts[i]);
     }
-    res.send(newCarts);
+    res.status(200).json({ status: "succes", payload: newCarts });
   }
 });
 router.get("/:id", async (req, res) => {
@@ -37,7 +37,6 @@ router.post("/", async (req, res) => {
 router.post("/:cid/product/:pid", async (req, res) => {
   const cid = parseInt(req.params.cid);
   const pid = parseInt(req.params.pid);
-  const cartUpdate = await cm.getCartById(cid);
   const carts = await cm.getCart();
   const result = carts.find((cart) => cart.id === cid);
   if (!result)
