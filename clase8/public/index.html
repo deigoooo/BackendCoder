@@ -12,10 +12,10 @@
         Registra una mascota...
     </div>
     <hr />
-    <form action="/pets" method="post">
+    <form action="/pets" method="post" enctype="multipart/form-data">
         name: <input type="text" name="name"><br>
         type: <input type="text" name="type">
-        foto: <input type="file" name="file" accept="image/png, .jpeg, .jpg, image/gif">
+        foto: <input type="file" name="coso">
         <input type="submit" value="Registrar mascota">
     </form>
 </body>

@@ -15,10 +15,11 @@ const uploader = multer({storage})
 const router = express.Router()
 
 router.get('/', (req, res) => res.json({ pets }))
-router.post('/', uploader.single('file'), (req, res) => {
+router.post('/', uploader.single('coso'), (req, res) => {
     if (!req.file) return res.status(400).json({ status: 'error', error: 'No hay arhicvo adjunto' })
     const pet = req.body
     pet.id = pets.length === 0 ? 1 : pets[pets.length-1].id+1
+    pet.url = `http://localhost:8080/${req.file.filename}`
     pets.push(pet)
     res.json(pet)
 })
