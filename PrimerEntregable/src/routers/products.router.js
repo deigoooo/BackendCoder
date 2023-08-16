@@ -47,7 +47,6 @@ router.post("/", async (req, res) => {
     return res.status(404).json({ status: "error", error: "Body is empty" });
 
   const newProduct = await pm.addProduct(product);
-  console.log(newProduct);
   res.status(201).json({ status: "success", payload: newProduct });
 });
 router.delete("/:id", async (req, res) => {
