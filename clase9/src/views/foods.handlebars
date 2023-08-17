@@ -1,0 +1,20 @@
+<div class="container">
+    Hola {{ user }}
+
+    {{#if isAdmin }}
+    <table class="table table-dark table-striped">
+        <tr>
+            <td>Nombre</td>
+            <td>Precio</td>
+        </tr>
+        {{#each foods}}
+        <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.price}}</td>
+        </tr>
+        {{/each}}
+    </table>
+    {{else}}
+    <p>No tienes permiso para ver esta info</p>
+    {{/if}}
+</div>
