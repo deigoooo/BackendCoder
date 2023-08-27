@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <title>SUPER CODER CHAT</title>
+  </head>
+  <body>
+    <div class="container text-center w-25 border border-black rounded-3">
+      <h1>Super Coder Chat</h1>
+      <hr />
+      <p id="idUsuario" class="text-end">Aca va el id</p>
+      <!-- <p class="text-end" id="idUsuario">Aca estaria el id</p> -->
+      <div
+        id="history"
+        class="border border-primary-subtle rounded-3"
+        style="min-height: 300px"
+      ></div>
+      <label>Ingrese su mensaje:</label>
+
+      <input
+        type="text"
+        id="chatBox"
+        class="m-3 border rounded-3 w-50"
+        placeholder="Presione ENRTER"
+      />
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
