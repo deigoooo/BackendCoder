@@ -1,0 +1,17 @@
+{
+  "name": "47290-backend-clase-16-mongo-advanced-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^7.5.2"
+  }
+}
