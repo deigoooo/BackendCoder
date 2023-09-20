@@ -1,9 +1,9 @@
 {
-  "name": "clase14",
+  "name": "ejemplosdemoongose",
   "version": "1.0.0",
   "description": "",
+  "main": "src/main.js",
   "type": "module",
-  "main": "src/index.js",
   "scripts": {
     "start": "node .",
     "dev": "node --watch ."
@@ -12,7 +12,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2",
-    "mongoose": "^7.5.1"
+    "mongoose": "^7.5.2"
   }
 }
