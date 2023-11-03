@@ -7,6 +7,22 @@ import cookieParser from "cookie-parser";
 import MongoStore from "connect-mongo";
 import passport from "passport";
 import initializePassport from "./config/passport.config.js";
+import dotenv from 'dotenv'
+
+import { Command } from 'commander'
+const program = new Command()
+program
+    .option('-p <port>', 'Puerto del servidor', 8080)
+    .option('--mode <mode>', 'Modo de ejecución', 'production')
+
+program.parse()
+
+
+const port = program.opts().p
+const environment = program.opts().mode
+dotenv.config({
+    path: environment === 'production' ? './.env.production' : './.env.development'
+})
 
 import __dirname from "./utils.js"
 import run from "./run.js";
@@ -22,7 +38,9 @@ app.set("views", __dirname + "/views")
 app.set("view engine", "handlebars")
 
 const MONGO_URI = "mongodb://127.0.0.1:27017"
-const MONGO_DB_NAME = "integradora2"
+const MONGO_DB_NAME = process.env.MONGO_DB_NAME
+
+console.log(MONGO_DB_NAME)
 
 app.use(session({
     secret: 'mysecret',
@@ -40,7 +58,7 @@ mongoose.connect(MONGO_URI, {
         console.log("DB No conected...")
         return
     }
-    const httpServer = app.listen(8080, () => console.log("Listening..."))
+    const httpServer = app.listen(port, () => console.log(`Listening on port ${port}...`))
     const socketServer = new Server(httpServer)
     httpServer.on("error", (e) => console.log("ERROR: " + e))
 
