@@ -1,0 +1,54 @@
+[
+	{
+		"first_name": "Alex",
+		"last_name": "Marin",
+		"age": 46,
+		"languages": [
+			"Javascript",
+			"Python",
+			"Rust"
+		],
+		"seniority": "super senior",
+		"email": "alexmarinmendez@gmail.com",
+		"id": 1
+	},
+	{
+		"first_name": "Alex 2",
+		"last_name": "Marin 2",
+		"age": 46,
+		"languages": [
+			"Javascript",
+			"Python",
+			"Rust"
+		],
+		"seniority": "super senior",
+		"email": "alexmarinmendez@gmail.com",
+		"id": 2
+	},
+	{
+		"first_name": "Alex 3",
+		"last_name": "Marin 3",
+		"age": 46,
+		"languages": [
+			"Javascript",
+			"Python",
+			"Rust"
+		],
+		"seniority": "super senior",
+		"email": "alexmarinmendez@gmail.com",
+		"id": 3
+	},
+	{
+		"first_name": "Alex",
+		"last_name": "Marin",
+		"age": 46,
+		"languages": [
+			"Javascript",
+			"Python",
+			"Rust"
+		],
+		"seniority": "super senior",
+		"email": "alexmarinmendez@gmail.com",
+		"id": 4
+	}
+]
