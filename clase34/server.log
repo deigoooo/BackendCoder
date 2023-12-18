@@ -1,0 +1,5 @@
+{"level":"info","message":"Server Up"}
+{"level":"error","message":"Usuario coder intentó acceder a la base de datos"}
+{"level":"info","message":"Server Up"}
+{"level":"debug","message":"Test de logger Debug"}
+{"level":"http","message":"Test de logger Http"}
